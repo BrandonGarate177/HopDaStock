@@ -15,3 +15,4 @@ struct HopDaStockApp: App {
         }
     }
 }
+

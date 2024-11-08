@@ -4,10 +4,50 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>HopDaStock.xcscheme_^#shared#^_</key>
+		<key>HopDaStock.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>HopDaStockForREAL.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CA2084E72CDD9297001275CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA2084F82CDD929A001275CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA2085022CDD929A001275CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA5A8FB42CDDDFEC00502200</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA5A8FC42CDDDFEF00502200</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA5A8FCE2CDDDFEF00502200</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
