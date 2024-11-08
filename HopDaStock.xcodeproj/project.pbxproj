@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA2084EC2CDD9297001275CB /* HopDaStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2084EB2CDD9297001275CB /* HopDaStockApp.swift */; };
+		CA2084EE2CDD9297001275CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2084ED2CDD9297001275CB /* ContentView.swift */; };
+		CA2084F02CDD929A001275CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2084EF2CDD929A001275CB /* Assets.xcassets */; };
+		CA2084F42CDD929A001275CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2084F32CDD929A001275CB /* Preview Assets.xcassets */; };
+		CA2084FE2CDD929A001275CB /* HopDaStockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2084FD2CDD929A001275CB /* HopDaStockTests.swift */; };
+		CA2085082CDD929A001275CB /* HopDaStockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2085072CDD929A001275CB /* HopDaStockUITests.swift */; };
+		CA20850A2CDD929A001275CB /* HopDaStockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2085092CDD929A001275CB /* HopDaStockUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA2084FA2CDD929A001275CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA2084E02CDD9297001275CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA2084E72CDD9297001275CB;
+			remoteInfo = HopDaStock;
+		};
+		CA2085042CDD929A001275CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA2084E02CDD9297001275CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA2084E72CDD9297001275CB;
+			remoteInfo = HopDaStock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA2084E82CDD9297001275CB /* HopDaStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2084EB2CDD9297001275CB /* HopDaStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopDaStockApp.swift; sourceTree = "<group>"; };
+		CA2084ED2CDD9297001275CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA2084EF2CDD929A001275CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA2084F12CDD929A001275CB /* HopDaStock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HopDaStock.entitlements; sourceTree = "<group>"; };
+		CA2084F32CDD929A001275CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2084FD2CDD929A001275CB /* HopDaStockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopDaStockTests.swift; sourceTree = "<group>"; };
+		CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2085072CDD929A001275CB /* HopDaStockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopDaStockUITests.swift; sourceTree = "<group>"; };
+		CA2085092CDD929A001275CB /* HopDaStockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopDaStockUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA2084E52CDD9297001275CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2084F62CDD929A001275CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2085002CDD929A001275CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA2084DF2CDD9297001275CB = {
+			isa = PBXGroup;
+			children = (
+				CA2084EA2CDD9297001275CB /* HopDaStock */,
+				CA2084FC2CDD929A001275CB /* HopDaStockTests */,
+				CA2085062CDD929A001275CB /* HopDaStockUITests */,
+				CA2084E92CDD9297001275CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA2084E92CDD9297001275CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA2084E82CDD9297001275CB /* HopDaStock.app */,
+				CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */,
+				CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA2084EA2CDD9297001275CB /* HopDaStock */ = {
+			isa = PBXGroup;
+			children = (
+				CA2084EB2CDD9297001275CB /* HopDaStockApp.swift */,
+				CA2084ED2CDD9297001275CB /* ContentView.swift */,
+				CA2084EF2CDD929A001275CB /* Assets.xcassets */,
+				CA2084F12CDD929A001275CB /* HopDaStock.entitlements */,
+				CA2084F22CDD929A001275CB /* Preview Content */,
+			);
+			path = HopDaStock;
+			sourceTree = "<group>";
+		};
+		CA2084F22CDD929A001275CB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CA2084F32CDD929A001275CB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA2084FC2CDD929A001275CB /* HopDaStockTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA2084FD2CDD929A001275CB /* HopDaStockTests.swift */,
+			);
+			path = HopDaStockTests;
+			sourceTree = "<group>";
+		};
+		CA2085062CDD929A001275CB /* HopDaStockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA2085072CDD929A001275CB /* HopDaStockUITests.swift */,
+				CA2085092CDD929A001275CB /* HopDaStockUITestsLaunchTests.swift */,
+			);
+			path = HopDaStockUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA2084E72CDD9297001275CB /* HopDaStock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA20850D2CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStock" */;
+			buildPhases = (
+				CA2084E42CDD9297001275CB /* Sources */,
+				CA2084E52CDD9297001275CB /* Frameworks */,
+				CA2084E62CDD9297001275CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HopDaStock;
+			productName = HopDaStock;
+			productReference = CA2084E82CDD9297001275CB /* HopDaStock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA2084F82CDD929A001275CB /* HopDaStockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA2085102CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStockTests" */;
+			buildPhases = (
+				CA2084F52CDD929A001275CB /* Sources */,
+				CA2084F62CDD929A001275CB /* Frameworks */,
+				CA2084F72CDD929A001275CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA2084FB2CDD929A001275CB /* PBXTargetDependency */,
+			);
+			name = HopDaStockTests;
+			productName = HopDaStockTests;
+			productReference = CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA2085022CDD929A001275CB /* HopDaStockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA2085132CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStockUITests" */;
+			buildPhases = (
+				CA2084FF2CDD929A001275CB /* Sources */,
+				CA2085002CDD929A001275CB /* Frameworks */,
+				CA2085012CDD929A001275CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA2085052CDD929A001275CB /* PBXTargetDependency */,
+			);
+			name = HopDaStockUITests;
+			productName = HopDaStockUITests;
+			productReference = CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA2084E02CDD9297001275CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					CA2084E72CDD9297001275CB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					CA2084F82CDD929A001275CB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = CA2084E72CDD9297001275CB;
+					};
+					CA2085022CDD929A001275CB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = CA2084E72CDD9297001275CB;
+					};
+				};
+			};
+			buildConfigurationList = CA2084E32CDD9297001275CB /* Build configuration list for PBXProject "HopDaStock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA2084DF2CDD9297001275CB;
+			productRefGroup = CA2084E92CDD9297001275CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA2084E72CDD9297001275CB /* HopDaStock */,
+				CA2084F82CDD929A001275CB /* HopDaStockTests */,
+				CA2085022CDD929A001275CB /* HopDaStockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA2084E62CDD9297001275CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA2084F42CDD929A001275CB /* Preview Assets.xcassets in Resources */,
+				CA2084F02CDD929A001275CB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2084F72CDD929A001275CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2085012CDD929A001275CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA2084E42CDD9297001275CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA2084EE2CDD9297001275CB /* ContentView.swift in Sources */,
+				CA2084EC2CDD9297001275CB /* HopDaStockApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2084F52CDD929A001275CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA2084FE2CDD929A001275CB /* HopDaStockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA2084FF2CDD929A001275CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA20850A2CDD929A001275CB /* HopDaStockUITestsLaunchTests.swift in Sources */,
+				CA2085082CDD929A001275CB /* HopDaStockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA2084FB2CDD929A001275CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA2084E72CDD9297001275CB /* HopDaStock */;
+			targetProxy = CA2084FA2CDD929A001275CB /* PBXContainerItemProxy */;
+		};
+		CA2085052CDD929A001275CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA2084E72CDD9297001275CB /* HopDaStock */;
+			targetProxy = CA2085042CDD929A001275CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CA20850B2CDD929A001275CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA20850C2CDD929A001275CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		CA20850E2CDD929A001275CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HopDaStock/HopDaStock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA20850F2CDD929A001275CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HopDaStock/HopDaStock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA2085112CDD929A001275CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopDaStock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HopDaStock";
+			};
+			name = Debug;
+		};
+		CA2085122CDD929A001275CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopDaStock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HopDaStock";
+			};
+			name = Release;
+		};
+		CA2085142CDD929A001275CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HopDaStock;
+			};
+			name = Debug;
+		};
+		CA2085152CDD929A001275CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HopDaStock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA2084E32CDD9297001275CB /* Build configuration list for PBXProject "HopDaStock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA20850B2CDD929A001275CB /* Debug */,
+				CA20850C2CDD929A001275CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA20850D2CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA20850E2CDD929A001275CB /* Debug */,
+				CA20850F2CDD929A001275CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA2085102CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA2085112CDD929A001275CB /* Debug */,
+				CA2085122CDD929A001275CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA2085132CDD929A001275CB /* Build configuration list for PBXNativeTarget "HopDaStockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA2085142CDD929A001275CB /* Debug */,
+				CA2085152CDD929A001275CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA2084E02CDD9297001275CB /* Project object */;
+}
