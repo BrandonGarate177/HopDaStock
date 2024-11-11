@@ -50,6 +50,8 @@
 		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
 		CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALTests; sourceTree = "<group>"; };
 		CA5A8FD22CDDDFEF00502200 /* HopDaStockForREALUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALUITests; sourceTree = "<group>"; };
+		CA5A90292CDEC1BA00502200 /* HopDaStockIOSAPPTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockIOSAPPTests; sourceTree = "<group>"; };
+		CA5A90332CDEC1BA00502200 /* HopDaStockIOSAPPUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockIOSAPPUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,8 @@
 				CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */,
 				CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */,
 				CA5A8FD22CDDDFEF00502200 /* HopDaStockForREALUITests */,
+				CA5A90292CDEC1BA00502200 /* HopDaStockIOSAPPTests */,
+				CA5A90332CDEC1BA00502200 /* HopDaStockIOSAPPUITests */,
 				CA2084E92CDD9297001275CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -768,8 +772,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock.HopDaStockForREALTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopDaStockForREAL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HopDaStockForREAL";
 			};
 			name = Debug;
@@ -788,8 +795,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock.HopDaStockForREALTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopDaStockForREAL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HopDaStockForREAL";
 			};
 			name = Release;

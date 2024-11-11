@@ -21,6 +21,20 @@
                ReferencedContainer = "container:HopDaStock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA5A90162CDEC1B700502200"
+               BuildableName = "HopDaStockIOSAPP.app"
+               BlueprintName = "HopDaStockIOSAPP"
+               ReferencedContainer = "container:HopDaStock.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

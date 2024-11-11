@@ -11,7 +11,7 @@ class StockService {
                   completion(.failure(NSError(domain: "Missing API Key", code: 0, userInfo: nil)))
                   return
         }
-        print("API Key retrieved successfully: \(apiKey)")
+//        print("API Key retrieved successfully: \(apiKey)")
 
 //         Construct URL for Alpha Vantage API
         let urlString = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(symbol)&apikey=\(apiKey)"
@@ -55,13 +55,16 @@ class StockService {
     }
 
     // Parse stock data JSON
-    func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double)] {
-        var stockPrices = [(date: String, closePrice: Double)]()
+    func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double, openPrice: Double)] {
+        var stockPrices = [(date: String, closePrice: Double, openPrice: Double)]()
         if let timeSeries = data["Time Series (Daily)"] as? [String: [String: String]] {
             for (date, values) in timeSeries {
-                if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice) {
-                    stockPrices.append((date: date, closePrice: closePriceDouble))
+                if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice), let opnePrice = values["1. open"], let openPriceDouble = Double(opnePrice) {
+                    stockPrices.append((date: date, closePrice: closePriceDouble, openPrice: openPriceDouble))
                 }
+//                if let openPrice = values["1. open"], let openPriceDouble = Double(openPrice) {
+//                    stockPrices.append((date: date, openPrice: openPriceDouble))
+//                }
             }
         }
         return stockPrices.sorted(by: { $0.date > $1.date })
