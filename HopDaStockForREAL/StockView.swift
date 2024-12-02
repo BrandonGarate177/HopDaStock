@@ -26,6 +26,9 @@ struct StockView: View {
         }
     }
 
+    
+    
+//    I can possibly remove this 
     func fetchStockData() {
         let stockService = StockService()
         stockService.fetchStockData(symbol: "QQQ") { result in
@@ -41,4 +44,5 @@ struct StockView: View {
             }
         }
     }
+    
 }

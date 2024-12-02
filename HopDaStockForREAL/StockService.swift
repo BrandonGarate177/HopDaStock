@@ -62,6 +62,7 @@ class StockService {
                 if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice), let opnePrice = values["1. open"], let openPriceDouble = Double(opnePrice) {
                     stockPrices.append((date: date, closePrice: closePriceDouble, openPrice: openPriceDouble))
                 }
+                
 //                if let openPrice = values["1. open"], let openPriceDouble = Double(openPrice) {
 //                    stockPrices.append((date: date, openPrice: openPriceDouble))
 //                }
