@@ -11,15 +11,20 @@ class StockService {
                   completion(.failure(NSError(domain: "Missing API Key", code: 0, userInfo: nil)))
                   return
         }
+        
+        // this fetches the api key with the link below. checks to see if we have a valid key and url
+        
 //        print("API Key retrieved successfully: \(apiKey)")
 
 //         Construct URL for Alpha Vantage API
+    
         let urlString = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(symbol)&apikey=\(apiKey)"
 
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
+        // TESTS
 
         // Make network request
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -42,6 +47,8 @@ class StockService {
             }
         }
         
+        //Peep the catch statements. Gotta make sure my code runs frfr 
+        
 //        let testURL = URL(string: "https://www.google.com")!
 //        let task = URLSession.shared.dataTask(with: testURL) { data, response, error in
 //            if let error = error {
@@ -62,6 +69,8 @@ class StockService {
                 if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice), let opnePrice = values["1. open"], let openPriceDouble = Double(opnePrice) {
                     stockPrices.append((date: date, closePrice: closePriceDouble, openPrice: openPriceDouble))
                 }
+                
+                
                 
 //                if let openPrice = values["1. open"], let openPriceDouble = Double(openPrice) {
 //                    stockPrices.append((date: date, openPrice: openPriceDouble))
