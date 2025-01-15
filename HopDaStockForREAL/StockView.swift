@@ -25,8 +25,6 @@ struct StockView: View {
             
         }
     }
-    
-     
 
     
     
