@@ -59,6 +59,8 @@ class StockService {
 //        }
 //        task.resume()
         task.resume()
+        
+        
     }
 
     // Parse stock data JSON
