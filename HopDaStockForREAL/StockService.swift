@@ -62,6 +62,7 @@ class StockService {
         
         
     }
+    
 
     // Parse stock data JSON
     func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double, openPrice: Double)] {
@@ -81,4 +82,24 @@ class StockService {
         }
         return stockPrices.sorted(by: { $0.date > $1.date })
     }
+    
+    func pathForPythonScript(named scriptName: String) -> String?{
+        
+        if let scriptPath = Bundle.main.path(
+            forResource: "stock_predictor",
+            ofType: "py",
+            inDirectory: "PythonScripts"
+        ) {
+            print("Found script at \(scriptPath)")
+        }
+        
+        
+        return Bundle.main.path(forResource: scriptName, ofType: "py")
+        
+      
+    }
+    
+ 
+        
+    
 }

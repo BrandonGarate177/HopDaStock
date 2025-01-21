@@ -46,8 +46,18 @@
 		CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/PythonScripts/stock_predictor.py,
+			);
+			target = CA2084E72CDD9297001275CB /* HopDaStock */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
+		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
 		CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALTests; sourceTree = "<group>"; };
 		CA5A8FD22CDDDFEF00502200 /* HopDaStockForREALUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALUITests; sourceTree = "<group>"; };
 		CA5A90292CDEC1BA00502200 /* HopDaStockIOSAPPTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockIOSAPPTests; sourceTree = "<group>"; };
