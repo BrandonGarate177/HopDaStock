@@ -50,7 +50,7 @@
 		CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/PythonScripts/stock_predictor.py,
+				Resources/stock_predictor.py,
 			);
 			target = CA2084E72CDD9297001275CB /* HopDaStock */;
 		};

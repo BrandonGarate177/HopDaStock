@@ -83,21 +83,64 @@ class StockService {
         return stockPrices.sorted(by: { $0.date > $1.date })
     }
     
-    func pathForPythonScript(named scriptName: String) -> String?{
-        
-        if let scriptPath = Bundle.main.path(
-            forResource: "stock_predictor",
-            ofType: "py",
-            inDirectory: "PythonScripts"
-        ) {
-            print("Found script at \(scriptPath)")
-        }
-        
-        
+    func pathForPythonScript(named scriptName: String) -> String? {
+        // This looks for a file named "<scriptName>.py" in the app bundle.
+        // Example: "stock_predict.py" => scriptName = "stock_predict"
         return Bundle.main.path(forResource: scriptName, ofType: "py")
-        
-      
     }
+
+    func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
+        // We'll use Process to call Python.
+        let process = Process()
+
+        // /usr/bin/env python3 is a common way to find python3 on macOS systems
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
+        process.arguments = ["python3", scriptPath]
+
+        // Capture output
+        let outputPipe = Pipe()
+        process.standardOutput = outputPipe
+        process.standardError = Pipe()
+
+        process.terminationHandler = { _ in
+            // When the script finishes, read its output from the pipe.
+            let data = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            let output = String(data: data, encoding: .utf8)
+            completion(output, nil)
+        }
+
+        do {
+            try process.run()
+        } catch {
+            completion(nil, error)
+        }
+    }
+    
+    
+    
+    
+    
+    
+//    ################### DEBUG ########################
+    func testRunningScript() {
+        // 1) Get the path to 'stock_predict.py' from the app bundle
+        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
+            print("Found script at: \(scriptPath)")
+            
+            // 2) Run the script
+            runPythonScript(scriptPath: scriptPath) { output, error in
+                if let error = error {
+                    print("Error running Python script: \(error)")
+                } else {
+                    print("Script output: \(output ?? "No output")")
+                }
+            }
+        } else {
+            print("Could not find stock_predict.py in the app bundle.")
+        }
+    }
+    
+    
     
  
         

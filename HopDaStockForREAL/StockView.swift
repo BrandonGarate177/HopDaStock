@@ -8,6 +8,8 @@ struct StockView: View {
     
 
     var body: some View {
+        
+        
         NavigationView {
             List(stockData, id: \.date) { data in
                 
@@ -17,8 +19,12 @@ struct StockView: View {
                     Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
                                 
                 }
+                Button("Run Python ML") {
+                    testRunningScript()
+                }
             }
             .navigationTitle("Stock Prices")
+            
             .onAppear {
                 fetchStockData()
             }
@@ -45,6 +51,12 @@ struct StockView: View {
         }
     }
     
+    
+    
+    func testRunningScript() {
+           let stockService = StockService()
+           stockService.testRunningScript()
+    }
     
     
 }
