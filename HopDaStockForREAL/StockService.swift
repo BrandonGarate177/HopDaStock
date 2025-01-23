@@ -11,15 +11,20 @@ class StockService {
                   completion(.failure(NSError(domain: "Missing API Key", code: 0, userInfo: nil)))
                   return
         }
-        print("API Key retrieved successfully: \(apiKey)")
+        
+        // this fetches the api key with the link below. checks to see if we have a valid key and url
+        
+//        print("API Key retrieved successfully: \(apiKey)")
 
 //         Construct URL for Alpha Vantage API
+    
         let urlString = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(symbol)&apikey=\(apiKey)"
 
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
+        // TESTS
 
         // Make network request
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -42,6 +47,8 @@ class StockService {
             }
         }
         
+        //Peep the catch statements. Gotta make sure my code runs frfr 
+        
 //        let testURL = URL(string: "https://www.google.com")!
 //        let task = URLSession.shared.dataTask(with: testURL) { data, response, error in
 //            if let error = error {
@@ -52,18 +59,90 @@ class StockService {
 //        }
 //        task.resume()
         task.resume()
+        
+        
     }
+    
 
     // Parse stock data JSON
-    func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double)] {
-        var stockPrices = [(date: String, closePrice: Double)]()
+    func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double, openPrice: Double)] {
+        var stockPrices = [(date: String, closePrice: Double, openPrice: Double)]()
         if let timeSeries = data["Time Series (Daily)"] as? [String: [String: String]] {
             for (date, values) in timeSeries {
-                if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice) {
-                    stockPrices.append((date: date, closePrice: closePriceDouble))
+                if let closePrice = values["4. close"], let closePriceDouble = Double(closePrice), let opnePrice = values["1. open"], let openPriceDouble = Double(opnePrice) {
+                    stockPrices.append((date: date, closePrice: closePriceDouble, openPrice: openPriceDouble))
                 }
+                
+                
+                
+//                if let openPrice = values["1. open"], let openPriceDouble = Double(openPrice) {
+//                    stockPrices.append((date: date, openPrice: openPriceDouble))
+//                }
             }
         }
         return stockPrices.sorted(by: { $0.date > $1.date })
     }
+    
+    func pathForPythonScript(named scriptName: String) -> String? {
+        // This looks for a file named "<scriptName>.py" in the app bundle.
+        // Example: "stock_predict.py" => scriptName = "stock_predict"
+        return Bundle.main.path(forResource: scriptName, ofType: "py")
+    }
+
+    func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
+        // We'll use Process to call Python.
+        let process = Process()
+
+        // /usr/bin/env python3 is a common way to find python3 on macOS systems
+        process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
+        process.arguments = ["python3", scriptPath]
+
+        // Capture output
+        let outputPipe = Pipe()
+        process.standardOutput = outputPipe
+        process.standardError = Pipe()
+
+        process.terminationHandler = { _ in
+            // When the script finishes, read its output from the pipe.
+            let data = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            let output = String(data: data, encoding: .utf8)
+            completion(output, nil)
+        }
+
+        do {
+            try process.run()
+        } catch {
+            completion(nil, error)
+        }
+    }
+    
+    
+    
+    
+    
+    
+//    ################### DEBUG ########################
+    func testRunningScript() {
+        // 1) Get the path to 'stock_predict.py' from the app bundle
+        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
+            print("Found script at: \(scriptPath)")
+            
+            // 2) Run the script
+            runPythonScript(scriptPath: scriptPath) { output, error in
+                if let error = error {
+                    print("Error running Python script: \(error)")
+                } else {
+                    print("Script output: \(output ?? "No output")")
+                }
+            }
+        } else {
+            print("Could not find stock_predict.py in the app bundle.")
+        }
+    }
+    
+    
+    
+ 
+        
+    
 }

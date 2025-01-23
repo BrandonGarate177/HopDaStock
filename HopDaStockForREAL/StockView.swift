@@ -2,27 +2,42 @@
 import SwiftUI
 
 struct StockView: View {
-    @State private var stockData: [(date: String, closePrice: Double)] = []
+    @State private var stockData: [(date: String, closePrice: Double, openPrice: Double)] = []
     @State private var errorMessage: String?
+    
+    
 
     var body: some View {
+        
+        
         NavigationView {
             List(stockData, id: \.date) { data in
+                
                 VStack(alignment: .leading) {
                     Text("Date: \(data.date)")
                     Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
+                    Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
+                                
+                }
+                Button("Run Python ML") {
+                    testRunningScript()
                 }
             }
             .navigationTitle("Stock Prices")
+            
             .onAppear {
                 fetchStockData()
             }
+            
         }
     }
 
+    
+    
+//    I can possibly remove this 
     func fetchStockData() {
         let stockService = StockService()
-        stockService.fetchStockData(symbol: "AAPL") { result in
+        stockService.fetchStockData(symbol: "QQQ") { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -35,4 +50,13 @@ struct StockView: View {
             }
         }
     }
+    
+    
+    
+    func testRunningScript() {
+           let stockService = StockService()
+           stockService.testRunningScript()
+    }
+    
+    
 }
