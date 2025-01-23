@@ -29,6 +29,7 @@ struct StockView: View {
 //             .fixedSize(.random())
             
             
+            
             .navigationTitle("Stock Prices")
             
             .onAppear {
