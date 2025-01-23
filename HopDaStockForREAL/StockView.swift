@@ -19,15 +19,22 @@ struct StockView: View {
                     Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
                                 
                 }
-                Button("Run Python ML") {
-                    testRunningScript()
-                }
+                
             }
+            
+            Button("Run Python ML") {
+                testRunningScript()
+            }
+            .buttonStyle(.bordered)
+//             .fixedSize(.random())
+            
+            
             .navigationTitle("Stock Prices")
             
             .onAppear {
                 fetchStockData()
             }
+           
             
         }
     }
