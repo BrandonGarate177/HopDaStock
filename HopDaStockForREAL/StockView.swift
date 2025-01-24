@@ -23,7 +23,9 @@ struct StockView: View {
             }
             
             Button("Run Python ML") {
+                print("Attempting to Run Script")
                 testRunningScript()
+                print("Post Running Script")
             }
             .buttonStyle(.bordered)
 //             .fixedSize(.random())
