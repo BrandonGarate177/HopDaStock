@@ -88,27 +88,40 @@ class StockService {
         // Example: "stock_predict.py" => scriptName = "stock_predict"
         return Bundle.main.path(forResource: scriptName, ofType: "py")
     }
+    
+    
 
     func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
-        // We'll use Process to call Python.
+//        Creates a process object and sets it capable of reading out script
         let process = Process()
-
-        // /usr/bin/env python3 is a common way to find python3 on macOS systems
         process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
         process.arguments = ["python3", scriptPath]
-
-        // Capture output
+//          Debugging clutch
         let outputPipe = Pipe()
-        process.standardOutput = outputPipe
-        process.standardError = Pipe()
+        let errorPipe = Pipe()
 
+//        Man i love processing
+        process.standardOutput = outputPipe
+        process.standardError = errorPipe
+
+        // Its literally so beautiful
         process.terminationHandler = { _ in
-            // When the script finishes, read its output from the pipe.
-            let data = outputPipe.fileHandleForReading.readDataToEndOfFile()
-            let output = String(data: data, encoding: .utf8)
+            // Read stdout
+            let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+            let output = String(data: outData, encoding: .utf8)
+
+            // Read stderr
+            let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+            let errors = String(data: errData, encoding: .utf8)
+            // THIS LITTLE
+            if let errors = errors, !errors.isEmpty {
+                print("Script error:\n\(errors)")
+            }
+            
             completion(output, nil)
         }
 
+        
         do {
             try process.run()
         } catch {
@@ -119,6 +132,7 @@ class StockService {
     
     
     
+
     
     
 //    ################### DEBUG ########################
@@ -133,6 +147,8 @@ class StockService {
                     print("Error running Python script: \(error)")
                 } else {
                     print("Script output: \(output ?? "No output")")
+                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
+                    print("Bruh what")
                 }
             }
         } else {

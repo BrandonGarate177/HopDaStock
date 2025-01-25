@@ -26,6 +26,8 @@ struct StockView: View {
                 print("Attempting to Run Script")
                 testRunningScript()
                 print("Post Running Script")
+                
+
             }
             .buttonStyle(.bordered)
 //             .fixedSize(.random())
@@ -35,7 +37,9 @@ struct StockView: View {
             .navigationTitle("Stock Prices")
             
             .onAppear {
+                
                 fetchStockData()
+
             }
            
             
@@ -68,5 +72,6 @@ struct StockView: View {
            stockService.testRunningScript()
     }
     
+  
     
 }
