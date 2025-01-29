@@ -1,4 +1,13 @@
 import Foundation
+import PythonKit
+
+
+
+//let sys = Python.import("sys")
+
+//print("Python \(sys.version_info.major).\(sys.version_info.minor)")
+//print("Python Version: \(sys.version)")
+//print("Python Encoding: \(sys.getdefaultencoding().upper())")
 
 class StockService {
     // Fetch stock data from Alpha Vantage API
@@ -117,6 +126,7 @@ class StockService {
             if let errors = errors, !errors.isEmpty {
                 print("Script error:\n\(errors)")
             }
+            // python is blocked by the sanbox. So fuck me then huh 
             
             completion(output, nil)
         }
@@ -147,6 +157,10 @@ class StockService {
                     print("Error running Python script: \(error)")
                 } else {
                     print("Script output: \(output ?? "No output")")
+                    
+                    
+                    
+                    
                     // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
                     print("Bruh what")
                 }

@@ -6,6 +6,11 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CAA3FFD52D4A9C21007B46F6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAA3FFD42D4A9C21007B46F6 /* PythonKit */; };
+		CAA3FFD72D4A9C3C007B46F6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAA3FFD62D4A9C3C007B46F6 /* PythonKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CA2084FA2CDD929A001275CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -44,6 +49,7 @@
 		CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStockForREAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A8FC52CDDDFEF00502200 /* HopDaStockForREALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAA3FFD82D4A9D38007B46F6 /* PythonKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PythonKit; path = "/Users/brandon/Library/Developer/Xcode/DerivedData/HopDaStock-gbxogrvymnqwofatxjvgvdqotjtk/SourcePackages/checkouts/PythonKit"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -66,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA3FFD52D4A9C21007B46F6 /* PythonKit in Frameworks */,
+				CAA3FFD72D4A9C3C007B46F6 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +121,7 @@
 				CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */,
 				CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */,
 				CA2084E92CDD9297001275CB /* Products */,
+				CAA3FFD82D4A9D38007B46F6 /* PythonKit */,
 			);
 			sourceTree = "<group>";
 		};
@@ -293,6 +302,9 @@
 				Base,
 			);
 			mainGroup = CA2084DF2CDD9297001275CB;
+			packageReferences = (
+				CAA3FFD32D4A9C21007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */,
+			);
 			productRefGroup = CA2084E92CDD9297001275CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -548,6 +560,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -560,7 +573,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
@@ -586,6 +599,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -598,7 +612,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.3;
@@ -910,6 +924,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAA3FFD32D4A9C21007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAA3FFD42D4A9C21007B46F6 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA3FFD32D4A9C21007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CAA3FFD62D4A9C3C007B46F6 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA3FFD32D4A9C21007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA2084E02CDD9297001275CB /* Project object */;
 }
