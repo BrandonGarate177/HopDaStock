@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+
 struct StockView: View {
     @State private var stockData: [(date: String, closePrice: Double, openPrice: Double)] = []
     @State private var errorMessage: String?

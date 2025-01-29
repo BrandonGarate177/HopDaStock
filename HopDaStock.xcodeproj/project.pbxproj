@@ -6,6 +6,20 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CAA3003D2D4A9FFD007B46F6 /* stock_predictor.py in Resources */ = {isa = PBXBuildFile; fileRef = CAA300332D4A9FFD007B46F6 /* stock_predictor.py */; };
+		CAA3003E2D4A9FFD007B46F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA300352D4A9FFD007B46F6 /* Assets.xcassets */; };
+		CAA3003F2D4A9FFD007B46F6 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAA300392D4A9FFD007B46F6 /* Secrets.plist */; };
+		CAA300402D4A9FFD007B46F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA300362D4A9FFD007B46F6 /* ContentView.swift */; };
+		CAA300412D4A9FFD007B46F6 /* HopDaStockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA300372D4A9FFD007B46F6 /* HopDaStockApp.swift */; };
+		CAA300422D4A9FFD007B46F6 /* StockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA3003A2D4A9FFD007B46F6 /* StockService.swift */; };
+		CAA300432D4A9FFD007B46F6 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA3003B2D4A9FFD007B46F6 /* StockView.swift */; };
+		CAA300442D4A9FFD007B46F6 /* stock_predictor.py in Resources */ = {isa = PBXBuildFile; fileRef = CAA300332D4A9FFD007B46F6 /* stock_predictor.py */; };
+		CAA300492D4AA142007B46F6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAA300482D4AA142007B46F6 /* PythonKit */; };
+		CAA3004B2D4AB19A007B46F6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAA3004A2D4AB19A007B46F6 /* PythonKit */; };
+		CAA300522D4AB26A007B46F6 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAA300512D4AB26A007B46F6 /* PythonKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CA2084FA2CDD929A001275CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -39,26 +53,34 @@
 
 /* Begin PBXFileReference section */
 		CA2084E82CDD9297001275CB /* HopDaStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStockForREAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5A8FC52CDDDFEF00502200 /* HopDaStockForREALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HopDaStockTests.xctest; path = "/Users/brandon/Programming Projects. /HopDaStock/build/Debug/HopDaStock.app/Contents/PlugIns/HopDaStockTests.xctest"; sourceTree = "<absolute>"; };
+		CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HopDaStockUITests.xctest; path = "/Users/brandon/Programming Projects. /HopDaStock/build/Debug/HopDaStockUITests-Runner.app/Contents/PlugIns/HopDaStockUITests.xctest"; sourceTree = "<absolute>"; };
+		CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HopDaStockForREAL.app; path = "/Users/brandon/Programming Projects. /HopDaStock/build/Debug/HopDaStockForREAL.app"; sourceTree = "<absolute>"; };
+		CA5A8FC52CDDDFEF00502200 /* HopDaStockForREALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HopDaStockForREALTests.xctest; path = "/Users/brandon/Programming Projects. /HopDaStock/build/Debug/HopDaStockForREAL.app/Contents/PlugIns/HopDaStockForREALTests.xctest"; sourceTree = "<absolute>"; };
+		CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HopDaStockForREALUITests.xctest; path = "/Users/brandon/Programming Projects. /HopDaStock/build/Debug/HopDaStockForREALUITests-Runner.app/Contents/PlugIns/HopDaStockForREALUITests.xctest"; sourceTree = "<absolute>"; };
+		CAA300332D4A9FFD007B46F6 /* stock_predictor.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = stock_predictor.py; sourceTree = "<group>"; };
+		CAA300352D4A9FFD007B46F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAA300362D4A9FFD007B46F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CAA300372D4A9FFD007B46F6 /* HopDaStockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopDaStockApp.swift; sourceTree = "<group>"; };
+		CAA300382D4A9FFD007B46F6 /* HopDaStockForREAL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HopDaStockForREAL.entitlements; sourceTree = "<group>"; };
+		CAA300392D4A9FFD007B46F6 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		CAA3003A2D4A9FFD007B46F6 /* StockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockService.swift; sourceTree = "<group>"; };
+		CAA3003B2D4A9FFD007B46F6 /* StockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		CAA300502D4AB23F007B46F6 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/stock_predictor.py,
+				"Preview Assets.xcassets",
 			);
-			target = CA2084E72CDD9297001275CB /* HopDaStock */;
+			target = CA5A8FB42CDDDFEC00502200 /* HopDaStockForREAL */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
-		CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALTests; sourceTree = "<group>"; };
+		CAA3004D2D4AB23F007B46F6 /* Preview Content */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CAA300502D4AB23F007B46F6 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Preview Content"; sourceTree = "<group>"; };
+		CAA3004E2D4AB23F007B46F6 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA300492D4AA142007B46F6 /* PythonKit in Frameworks */,
+				CAA3004B2D4AB19A007B46F6 /* PythonKit in Frameworks */,
+				CAA300522D4AB26A007B46F6 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +135,17 @@
 		CA2084DF2CDD9297001275CB = {
 			isa = PBXGroup;
 			children = (
-				CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */,
-				CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */,
 				CA2084E92CDD9297001275CB /* Products */,
+				CAA3004D2D4AB23F007B46F6 /* Preview Content */,
+				CAA3004E2D4AB23F007B46F6 /* Resources */,
+				CAA300352D4A9FFD007B46F6 /* Assets.xcassets */,
+				CAA300362D4A9FFD007B46F6 /* ContentView.swift */,
+				CAA300372D4A9FFD007B46F6 /* HopDaStockApp.swift */,
+				CAA300382D4A9FFD007B46F6 /* HopDaStockForREAL.entitlements */,
+				CAA300392D4A9FFD007B46F6 /* Secrets.plist */,
+				CAA300332D4A9FFD007B46F6 /* stock_predictor.py */,
+				CAA3003A2D4A9FFD007B46F6 /* StockService.swift */,
+				CAA3003B2D4A9FFD007B46F6 /* StockView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,11 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				CA2084E82CDD9297001275CB /* HopDaStock.app */,
-				CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */,
-				CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */,
-				CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */,
-				CA5A8FC52CDDDFEF00502200 /* HopDaStockForREALTests.xctest */,
-				CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,7 +226,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */,
+				CAA3004E2D4AB23F007B46F6 /* Resources */,
 			);
 			name = HopDaStockForREAL;
 			packageProductDependencies = (
@@ -219,9 +247,6 @@
 			);
 			dependencies = (
 				CA5A8FC72CDDDFEF00502200 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */,
 			);
 			name = HopDaStockForREALTests;
 			packageProductDependencies = (
@@ -293,6 +318,9 @@
 				Base,
 			);
 			mainGroup = CA2084DF2CDD9297001275CB;
+			packageReferences = (
+				CAA300472D4AA142007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */,
+			);
 			productRefGroup = CA2084E92CDD9297001275CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA300442D4A9FFD007B46F6 /* stock_predictor.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +362,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA3003D2D4A9FFD007B46F6 /* stock_predictor.py in Resources */,
+				CAA3003E2D4A9FFD007B46F6 /* Assets.xcassets in Resources */,
+				CAA3003F2D4A9FFD007B46F6 /* Secrets.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +410,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA300402D4A9FFD007B46F6 /* ContentView.swift in Sources */,
+				CAA300412D4A9FFD007B46F6 /* HopDaStockApp.swift in Sources */,
+				CAA300422D4A9FFD007B46F6 /* StockService.swift in Sources */,
+				CAA300432D4A9FFD007B46F6 /* StockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +584,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -586,6 +623,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				DEVELOPMENT_TEAM = 6K96C3FPZ4;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -910,6 +949,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAA300472D4AA142007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAA300482D4AA142007B46F6 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA300472D4AA142007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CAA3004A2D4AB19A007B46F6 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA300472D4AA142007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CAA300512D4AB26A007B46F6 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA300472D4AA142007B46F6 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA2084E02CDD9297001275CB /* Project object */;
 }
