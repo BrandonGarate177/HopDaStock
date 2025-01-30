@@ -92,7 +92,7 @@ class StockService {
     
     func saveStockDataToJSON(_ records: [(date: String, closePrice: Double, openPrice: Double)]) -> URL? {
         let stockRecords = records.map { StockRecord(date: $0.date, closePrice: $0.closePrice, openPrice: $0.openPrice) }
-        print("saveStockDataToJSON RUNS")
+        
         
         do {
             let jsonData = try JSONEncoder().encode(stockRecords)
@@ -122,8 +122,8 @@ class StockService {
     func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
 //        Creates a process object and sets it capable of reading out script
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-        process.arguments = ["python3", scriptPath]
+        process.executableURL = URL(fileURLWithPath: "")
+        process.arguments = ["python", scriptPath]
 //          Debugging clutch
         let outputPipe = Pipe()
         let errorPipe = Pipe()
