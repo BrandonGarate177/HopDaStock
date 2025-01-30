@@ -6,6 +6,10 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CA4345872D4AFF56008674EF /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA4345862D4AFF56008674EF /* PythonKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		CA2084FA2CDD929A001275CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -87,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4345872D4AFF56008674EF /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +207,7 @@
 			);
 			name = HopDaStockForREAL;
 			packageProductDependencies = (
+				CA4345862D4AFF56008674EF /* PythonKit */,
 			);
 			productName = HopDaStockForREAL;
 			productReference = CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */;
@@ -293,6 +299,9 @@
 				Base,
 			);
 			mainGroup = CA2084DF2CDD9297001275CB;
+			packageReferences = (
+				CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */,
+			);
 			productRefGroup = CA2084E92CDD9297001275CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -548,6 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -586,6 +596,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HopDaStock/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -910,6 +921,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA4345862D4AFF56008674EF /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA2084E02CDD9297001275CB /* Project object */;
 }
