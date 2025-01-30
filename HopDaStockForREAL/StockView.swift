@@ -10,6 +10,8 @@ struct StockView: View {
     var body: some View {
         
         
+        
+        
         NavigationView {
             List(stockData, id: \.date) { data in
                 
@@ -23,9 +25,7 @@ struct StockView: View {
             }
             
             Button("Run Python ML") {
-                print("Attempting to Run Script")
                 testRunningScript()
-                print("Post Running Script")
                 
 
             }
@@ -39,6 +39,7 @@ struct StockView: View {
             .onAppear {
                 
                 fetchStockData()
+                fetchAndStoreJSON()
 
             }
            
@@ -63,6 +64,8 @@ struct StockView: View {
                 }
             }
         }
+        
+        
     }
     
     
@@ -72,6 +75,31 @@ struct StockView: View {
            stockService.testRunningScript()
     }
     
-  
+    
+    
+    func fetchAndStoreJSON() {
+            let stockService = StockService()
+            stockService.fetchStockData(symbol: "QQQ") { result in
+                switch result {
+                case .success(let data):
+                    // Parse
+                    let parsed = stockService.parseStockData(data)
+                    DispatchQueue.main.async {
+                        stockData = parsed
+                        // Once we have the data, we can save it to JSON:
+                        if let fileURL = stockService.saveStockDataToJSON(parsed) {
+                            print("Wrote stock data to JSON at: \(fileURL.path)")
+                            // Next step: pass fileURL to the Python script, etc.
+                        }
+                    }
+                case .failure(let error):
+                    print("Error fetching stock data:", error)
+                }
+            }
+        }
+    
+    
+    
+    
     
 }

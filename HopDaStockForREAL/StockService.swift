@@ -13,6 +13,8 @@ class StockService {
                   return
         }
         
+        
+        
         // this fetches the api key with the link below. checks to see if we have a valid key and url
         
 //        print("API Key retrieved successfully: \(apiKey)")
@@ -48,17 +50,7 @@ class StockService {
             }
         }
         
-        //Peep the catch statements. Gotta make sure my code runs frfr 
-        
-//        let testURL = URL(string: "https://www.google.com")!
-//        let task = URLSession.shared.dataTask(with: testURL) { data, response, error in
-//            if let error = error {
-//                print("Test URL failed with error: \(error.localizedDescription)")
-//            } else {
-//                print("Test URL succeeded!")
-//            }
-//        }
-//        task.resume()
+    
         task.resume()
         
         
@@ -82,11 +74,46 @@ class StockService {
             }
         }
         return stockPrices.sorted(by: { $0.date > $1.date })
+        
+
+        
     }
+    
+    
+    // the real work begins
+    
+    // StockRecord holds all these variables
+    struct StockRecord: Codable{
+        let date: String
+        let closePrice: Double
+        let openPrice: Double
+    }
+
+    
+    func saveStockDataToJSON(_ records: [(date: String, closePrice: Double, openPrice: Double)]) -> URL? {
+        let stockRecords = records.map { StockRecord(date: $0.date, closePrice: $0.closePrice, openPrice: $0.openPrice) }
+        print("saveStockDataToJSON RUNS")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(stockRecords)
+            //Saves to a temp file
+            let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("stock_data.json")
+            try jsonData.write(to: tempURL)
+            return tempURL
+            // catch statement incase it not working properly
+        } catch {
+            print("Error writing JSON: \(error)")
+            return nil
+            
+        }
+        
+    }
+    
+    
+    
     
     func pathForPythonScript(named scriptName: String) -> String? {
         // This looks for a file named "<scriptName>.py" in the app bundle.
-        // Example: "stock_predict.py" => scriptName = "stock_predict"
         return Bundle.main.path(forResource: scriptName, ofType: "py")
     }
     
@@ -149,13 +176,14 @@ class StockService {
                 } else {
                     print("Script output: \(output ?? "No output")")
                     // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
-                    print("Bruh what")
                 }
             }
         } else {
             print("Could not find stock_predict.py in the app bundle.")
         }
     }
+    
+    
     
     
     
