@@ -119,44 +119,49 @@ class StockService {
     
     
 
-    func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
-//        Creates a process object and sets it capable of reading out script
+    func runEmbeddedPythonScript(scriptPath: String) {
+        // 1) Locate the embedded python binary in the app bundle
+        guard let pythonURL = Bundle.main.url(
+            forResource: "my_embedded_python/bin/python3",
+            withExtension: nil
+        ) else {
+            print("Could not find embedded python3 in the Resources folder")
+            return
+        }
+        
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: "")
-        process.arguments = ["python", scriptPath]
-//          Debugging clutch
+        process.executableURL = pythonURL
+        // If your script is also in Resources, you can locate that path similarly:
+        // guard let scriptURL = Bundle.main.url(forResource: "stock_predictor", withExtension: "py")
+        // else { ... }
+        process.arguments = [scriptPath]  // plus any extra args
+
         let outputPipe = Pipe()
         let errorPipe = Pipe()
-
-//        Man i love processing
         process.standardOutput = outputPipe
         process.standardError = errorPipe
 
-        // Its literally so beautiful
         process.terminationHandler = { _ in
-            // Read stdout
             let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
             let output = String(data: outData, encoding: .utf8)
 
-            // Read stderr
             let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-            let errors = String(data: errData, encoding: .utf8)
-            // THIS LITTLE
-            if let errors = errors, !errors.isEmpty {
-                print("Script error:\n\(errors)")
+            let errorOutput = String(data: errData, encoding: .utf8)
+            
+            if let errOutput = errorOutput, !errOutput.isEmpty {
+                print("Python error:\n\(errOutput)")
             }
             
-            completion(output, nil)
+            print("Python output:", output ?? "No output")
         }
 
-        
         do {
             try process.run()
         } catch {
-            completion(nil, error)
+            print("Error running embedded python:", error)
         }
     }
-    
+
     
     
     
@@ -164,24 +169,24 @@ class StockService {
     
     
 //    ################### DEBUG ########################
-    func testRunningScript() {
-        // 1) Get the path to 'stock_predict.py' from the app bundle
-        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
-            print("Found script at: \(scriptPath)")
-            
-            // 2) Run the script
-            runPythonScript(scriptPath: scriptPath) { output, error in
-                if let error = error {
-                    print("Error running Python script: \(error)")
-                } else {
-                    print("Script output: \(output ?? "No output")")
-                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
-                }
-            }
-        } else {
-            print("Could not find stock_predict.py in the app bundle.")
-        }
-    }
+//    func testRunningScript() {
+//        // 1) Get the path to 'stock_predict.py' from the app bundle
+//        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
+//            print("Found script at: \(scriptPath)")
+//            
+//            // 2) Run the script
+//            runPythonScript(scriptPath: scriptPath) { output, error in
+//                if let error = error {
+//                    print("Error running Python script: \(error)")
+//                } else {
+//                    print("Script output: \(output ?? "No output")")
+//                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
+//                }
+//            }
+//        } else {
+//            print("Could not find stock_predict.py in the app bundle.")
+//        }
+//    }
     
     
     
