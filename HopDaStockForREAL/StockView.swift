@@ -24,6 +24,8 @@ struct StockView: View {
             }
             
             
+            
+            
             Button("Run Python ML") {
                 testRunningScript()
                 

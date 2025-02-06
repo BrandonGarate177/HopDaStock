@@ -122,10 +122,10 @@ class StockService {
     func runEmbeddedPythonScript(scriptPath: String) {
         // 1) Locate the embedded python binary in the app bundle
         guard let pythonURL = Bundle.main.url(
-            forResource: "my_embedded_python/bin/python3",
+            forResource: "Frameworks/Yython3",
             withExtension: nil
         ) else {
-            print("Could not find embedded python3 in the Resources folder")
+            print("Still hates me")
             return
         }
         
