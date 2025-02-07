@@ -121,13 +121,28 @@ class StockService {
 
     func runEmbeddedPythonScript(scriptPath: String) {
         // 1) Locate the embedded python binary in the app bundle
+        
+        if let frameworksPath = Bundle.main.resourcePath?.appending("/Frameworks") {
+            let fileManager = FileManager.default
+            do {
+                let items = try fileManager.contentsOfDirectory(atPath: frameworksPath)
+                print("Contents of Frameworks folder: \(items)")
+            } catch {
+                print("Error listing contents of Frameworks folder: \(error)")
+            }
+        }
+        
+        
+        //chat code
         guard let pythonURL = Bundle.main.url(
-            forResource: "Frameworks/Python3",
-            withExtension: nil
+            forResource: "Python3",            // The actual filename
+            withExtension: nil,
+            subdirectory: "Frameworks"         // The folder within your bundle
         ) else {
-            print("Still hates me")
+            print("Python framework not found in bundle.")
             return
         }
+        
         
         let process = Process()
         process.executableURL = pythonURL

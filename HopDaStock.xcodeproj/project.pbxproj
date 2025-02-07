@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA371DF02D51A6D200DE0623 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA371DEF2D51A6D200DE0623 /* PythonKit */; };
-		CA93B8C42D544AD000C63896 /* Python3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA371DEB2D51A69500DE0623 /* Python3.framework */; };
+		CA4B3ECD2D56ADFD0029D303 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA4B3ECC2D56ADFD0029D303 /* PythonKit */; };
+		CA4B3ED52D56AF7E0029D303 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA4B3ED42D56AF7E0029D303 /* PythonKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +43,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CA4B3EE92D56B3740029D303 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA4B3F182D56B7DE0029D303 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CA2084E82CDD9297001275CB /* HopDaStock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2084F92CDD929A001275CB /* HopDaStockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2085032CDD929A001275CB /* HopDaStockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA371DEB2D51A69500DE0623 /* Python3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python3.framework; path = Library/Frameworks/Python3.framework; sourceTree = DEVELOPER_DIR; };
 		CA5A8FB52CDDDFEC00502200 /* HopDaStockForREAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopDaStockForREAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A8FC52CDDDFEF00502200 /* HopDaStockForREALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA5A8FCF2CDDDFEF00502200 /* HopDaStockForREALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopDaStockForREALUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +78,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ContentView.swift,
+				Frameworks/Python3.framework,
 				HopDaStockApp.swift,
 				Resources/stock_predictor.py,
 				Secrets.plist,
@@ -68,6 +90,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		CA4B3F1A2D56B7E40029D303 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Frameworks/Python3.framework = (
+					CodeSignOnCopy,
+					RemoveHeadersOnCopy,
+				);
+			};
+			buildPhase = CA4B3F182D56B7DE0029D303 /* CopyFiles */;
+			membershipExceptions = (
+				Frameworks/Python3.framework,
+			);
+		};
 		CA65076D2D4B187100D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = CA2084E42CDD9297001275CB /* Sources */;
@@ -92,7 +127,7 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, CA65076D2D4B187100D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, CA6507702D4B188500D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, CA6507902D4C389700D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
+		CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (CAF1876A2D402BEA00156A13 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, CA65076D2D4B187100D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, CA6507702D4B188500D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, CA6507902D4C389700D482FD /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, CA4B3F1A2D56B7E40029D303 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREAL; sourceTree = "<group>"; };
 		CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = HopDaStockForREALTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -101,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4B3ECD2D56ADFD0029D303 /* PythonKit in Frameworks */,
+				CA4B3ED52D56AF7E0029D303 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA93B8C42D544AD000C63896 /* Python3.framework in Frameworks */,
 				CA371DF02D51A6D200DE0623 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +185,6 @@
 			children = (
 				CA5A8FB62CDDDFEC00502200 /* HopDaStockForREAL */,
 				CA5A8FC82CDDDFEF00502200 /* HopDaStockForREALTests */,
-				CA371DEA2D51A69400DE0623 /* Frameworks */,
 				CA2084E92CDD9297001275CB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,14 +202,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CA371DEA2D51A69400DE0623 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CA371DEB2D51A69500DE0623 /* Python3.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,10 +212,12 @@
 				CA2084E42CDD9297001275CB /* Sources */,
 				CA2084E52CDD9297001275CB /* Frameworks */,
 				CA2084E62CDD9297001275CB /* Resources */,
+				CA4B3EE92D56B3740029D303 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CA4B3ED22D56AE370029D303 /* PBXTargetDependency */,
 			);
 			name = HopDaStock;
 			productName = HopDaStock;
@@ -238,6 +267,7 @@
 				CA5A8FB12CDDDFEC00502200 /* Sources */,
 				CA5A8FB22CDDDFEC00502200 /* Frameworks */,
 				CA5A8FB32CDDDFEC00502200 /* Resources */,
+				CA4B3F182D56B7DE0029D303 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -458,6 +488,10 @@
 			target = CA2084E72CDD9297001275CB /* HopDaStock */;
 			targetProxy = CA2085042CDD929A001275CB /* PBXContainerItemProxy */;
 		};
+		CA4B3ED22D56AE370029D303 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CA4B3ED12D56AE370029D303 /* PythonKit */;
+		};
 		CA5A8FC72CDDDFEF00502200 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CA5A8FB42CDDDFEC00502200 /* HopDaStockForREAL */;
@@ -601,6 +635,13 @@
 				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/HopDaStockForREAL/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -620,10 +661,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -641,6 +682,13 @@
 				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/HopDaStockForREAL/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -660,10 +708,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BrandonGarate.HopDaStock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -768,6 +816,14 @@
 				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/HopDaStock/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/HopDaStockForREAL/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -799,6 +855,14 @@
 				DEVELOPMENT_TEAM = 6K96C3FPZ4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/New\\ Folder",
+					"$(PROJECT_DIR)/HopDaStock/Frameworks",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/HopDaStockForREAL/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -980,6 +1044,21 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		CA371DEF2D51A6D200DE0623 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CA4B3ECC2D56ADFD0029D303 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CA4B3ED12D56AE370029D303 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
+		CA4B3ED42D56AF7E0029D303 /* PythonKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA4345852D4AFF56008674EF /* XCRemoteSwiftPackageReference "PythonKit" */;
 			productName = PythonKit;
