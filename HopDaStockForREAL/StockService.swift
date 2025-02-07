@@ -119,44 +119,55 @@ class StockService {
     
     
 
-    func runPythonScript(scriptPath: String, completion: @escaping (String?, Error?) -> Void) {
-//        Creates a process object and sets it capable of reading out script
+    func runEmbeddedPythonScript(scriptPath: String) {
+        // Locate the Python interpreter (this part remains unchanged)
+        guard let pythonURL = Bundle.main.url(
+            forResource: "Python3",  // your copied Python executable
+            withExtension: nil,
+            subdirectory: "Frameworks"
+        ) else {
+            print("Python framework not found in bundle.")
+            return
+        }
+        
         let process = Process()
-        process.executableURL = URL(fileURLWithPath: "")
-        process.arguments = ["python", scriptPath]
-//          Debugging clutch
+        process.executableURL = pythonURL
+        process.arguments = [scriptPath]
+        
+        // Update environment variables
+        var env = ProcessInfo.processInfo.environment
+        // Set PYTHONHOME to the correct environment root
+        env["PYTHONHOME"] = "/opt/anaconda3/envs/my_embedded_python"
+        env["PYTHONPATH"] = "/opt/anaconda3/envs/my_embedded_python/lib/python3.12"
+        
+        process.environment = env
+        
+        // Set up pipes to capture output and error
         let outputPipe = Pipe()
         let errorPipe = Pipe()
-
-//        Man i love processing
         process.standardOutput = outputPipe
         process.standardError = errorPipe
-
-        // Its literally so beautiful
+        
         process.terminationHandler = { _ in
-            // Read stdout
             let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
             let output = String(data: outData, encoding: .utf8)
-
-            // Read stderr
             let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-            let errors = String(data: errData, encoding: .utf8)
-            // THIS LITTLE
-            if let errors = errors, !errors.isEmpty {
-                print("Script error:\n\(errors)")
-            }
+            let errorOutput = String(data: errData, encoding: .utf8)
             
-            completion(output, nil)
+            if let errOutput = errorOutput, !errOutput.isEmpty {
+                print("Python error:\n\(errOutput)")
+            }
+            print("Python output:", output ?? "No output")
         }
-
         
         do {
             try process.run()
         } catch {
-            completion(nil, error)
+            print("Error running embedded python:", error)
         }
     }
-    
+
+
     
     
     
@@ -164,24 +175,24 @@ class StockService {
     
     
 //    ################### DEBUG ########################
-    func testRunningScript() {
-        // 1) Get the path to 'stock_predict.py' from the app bundle
-        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
-            print("Found script at: \(scriptPath)")
-            
-            // 2) Run the script
-            runPythonScript(scriptPath: scriptPath) { output, error in
-                if let error = error {
-                    print("Error running Python script: \(error)")
-                } else {
-                    print("Script output: \(output ?? "No output")")
-                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
-                }
-            }
-        } else {
-            print("Could not find stock_predict.py in the app bundle.")
-        }
-    }
+//    func testRunningScript() {
+//        // 1) Get the path to 'stock_predict.py' from the app bundle
+//        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
+//            print("Found script at: \(scriptPath)")
+//            
+//            // 2) Run the script
+//            runPythonScript(scriptPath: scriptPath) { output, error in
+//                if let error = error {
+//                    print("Error running Python script: \(error)")
+//                } else {
+//                    print("Script output: \(output ?? "No output")")
+//                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
+//                }
+//            }
+//        } else {
+//            print("Could not find stock_predict.py in the app bundle.")
+//        }
+//    }
     
     
     

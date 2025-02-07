@@ -24,6 +24,8 @@ struct StockView: View {
             }
             
             
+            
+            
             Button("Run Python ML") {
                 testRunningScript()
                 
@@ -34,7 +36,7 @@ struct StockView: View {
             .navigationTitle("Stock Prices")
             .onAppear {
                 fetchStockData()
-                //                fetchAndStoreJSON()
+                fetchAndStoreJSON()
             }
             
             
@@ -68,7 +70,15 @@ struct StockView: View {
     
     func testRunningScript() {
         let stockService = StockService()
-        stockService.testRunningScript()
+        if let scriptPath = stockService.pathForPythonScript(named: "stock_predictor") {
+                    print("Found script at: \(scriptPath)")
+        
+                    // 2) Run the script
+                    stockService.runEmbeddedPythonScript(scriptPath: scriptPath)
+                    
+                    }
+                
+            
     }
     
     

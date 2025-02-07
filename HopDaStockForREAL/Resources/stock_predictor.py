@@ -7,6 +7,8 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
+print("Hello from python")
+
 def main():
     if len(sys.argv) < 2:
         print("Error: No JSON file path provided.")
