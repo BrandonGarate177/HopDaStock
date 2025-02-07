@@ -120,51 +120,51 @@ class StockService {
     
 
     func runEmbeddedPythonScript(scriptPath: String) {
-        // Locate the Python interpreter (this part remains unchanged)
-        guard let pythonURL = Bundle.main.url(
-            forResource: "Python3",  // your copied Python executable
-            withExtension: nil,
-            subdirectory: "Frameworks"
-        ) else {
-            print("Python framework not found in bundle.")
-            return
-        }
-        
-        let process = Process()
-        process.executableURL = pythonURL
-        process.arguments = [scriptPath]
-        
-        // Update environment variables
-        var env = ProcessInfo.processInfo.environment
-        // Set PYTHONHOME to the correct environment root
-        env["PYTHONHOME"] = "/opt/anaconda3/envs/my_embedded_python"
-        // Optionally, set PYTHONPATH too
-        env["PYTHONPATH"] = "/opt/anaconda3/envs/my_embedded_python/lib/python3.12"
-        process.environment = env
-        
-        // Set up pipes to capture output and error
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        process.standardOutput = outputPipe
-        process.standardError = errorPipe
-        
-        process.terminationHandler = { _ in
-            let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-            let output = String(data: outData, encoding: .utf8)
-            let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
-            let errorOutput = String(data: errData, encoding: .utf8)
-            
-            if let errOutput = errorOutput, !errOutput.isEmpty {
-                print("Python error:\n\(errOutput)")
-            }
-            print("Python output:", output ?? "No output")
-        }
-        
-        do {
-            try process.run()
-        } catch {
-            print("Error running embedded python:", error)
-        }
+//        // Locate the Python interpreter (this part remains unchanged)
+//        guard let pythonURL = Bundle.main.url(
+//            forResource: "Python3",  // your copied Python executable
+//            withExtension: nil,
+//            subdirectory: "Frameworks"
+//        ) else {
+//            print("Python framework not found in bundle.")
+//            return
+//        }
+//        
+//        let process = Process()
+//        process.executableURL = pythonURL
+//        process.arguments = [scriptPath]
+//        
+//        // Update environment variables
+//        var env = ProcessInfo.processInfo.environment
+//        // Set PYTHONHOME to the correct environment root
+//        env["PYTHONHOME"] = "/opt/anaconda3/envs/my_embedded_python"
+//        // Optionally, set PYTHONPATH too
+//        env["PYTHONPATH"] = "/opt/anaconda3/envs/my_embedded_python/lib/python3.12"
+//        process.environment = env
+//        
+//        // Set up pipes to capture output and error
+//        let outputPipe = Pipe()
+//        let errorPipe = Pipe()
+//        process.standardOutput = outputPipe
+//        process.standardError = errorPipe
+//        
+//        process.terminationHandler = { _ in
+//            let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+//            let output = String(data: outData, encoding: .utf8)
+//            let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
+//            let errorOutput = String(data: errData, encoding: .utf8)
+//            
+//            if let errOutput = errorOutput, !errOutput.isEmpty {
+//                print("Python error:\n\(errOutput)")
+//            }
+//            print("Python output:", output ?? "No output")
+//        }
+//        
+//        do {
+//            try process.run()
+//        } catch {
+//            print("Error running embedded python:", error)
+//        }
     }
 
 
