@@ -119,53 +119,61 @@ class StockService {
     
     
 
-    func runEmbeddedPythonScript(scriptPath: String) {
-        // Locate the Python interpreter (this part remains unchanged)
+    func runEmbeddedPythonScript(
+        scriptPath: String,
+        arguments: [String],
+        completion: @escaping (String?, Error?) -> Void
+    ) {
         guard let pythonURL = Bundle.main.url(
-            forResource: "Python3",  // your copied Python executable
+            forResource: "Python3",
             withExtension: nil,
             subdirectory: "Frameworks"
         ) else {
-            print("Python framework not found in bundle.")
+            completion(nil, NSError(domain: "Python not found", code: 0))
             return
         }
-        
+
         let process = Process()
         process.executableURL = pythonURL
-        process.arguments = [scriptPath]
         
-        // Update environment variables
+        // We'll put the scriptPath as the first argument,
+        // plus any additional arguments your script needs
+        process.arguments = [scriptPath] + arguments
+        
+        // Example environment setup
         var env = ProcessInfo.processInfo.environment
-        // Set PYTHONHOME to the correct environment root
         env["PYTHONHOME"] = "/opt/anaconda3/envs/my_embedded_python"
         env["PYTHONPATH"] = "/opt/anaconda3/envs/my_embedded_python/lib/python3.12"
-        
         process.environment = env
-        
-        // Set up pipes to capture output and error
+
         let outputPipe = Pipe()
         let errorPipe = Pipe()
         process.standardOutput = outputPipe
         process.standardError = errorPipe
-        
+
         process.terminationHandler = { _ in
             let outData = outputPipe.fileHandleForReading.readDataToEndOfFile()
             let output = String(data: outData, encoding: .utf8)
+
             let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
             let errorOutput = String(data: errData, encoding: .utf8)
-            
+
+            // If there's any stderr output, log it
             if let errOutput = errorOutput, !errOutput.isEmpty {
                 print("Python error:\n\(errOutput)")
             }
-            print("Python output:", output ?? "No output")
+
+            // Call completion with whatever we read from stdout
+            completion(output, nil)
         }
-        
+
         do {
             try process.run()
         } catch {
-            print("Error running embedded python:", error)
+            completion(nil, error)
         }
     }
+
 
 
     
@@ -193,6 +201,51 @@ class StockService {
 //            print("Could not find stock_predict.py in the app bundle.")
 //        }
 //    }
+    
+    
+    // Example function
+    func runMLPrediction(jsonURL: URL) {
+        guard let scriptPath = Bundle.main.path(forResource: "stock_predictor", ofType: "py") else {
+            print("Could not find stock_predictor.py in bundle")
+            return
+        }
+        
+        // runPythonScript is a helper function you wrote
+        runEmbeddedPythonScript(
+                scriptPath: scriptPath,
+                arguments: [jsonURL.path]
+            ) { output, error in
+            if let error = error {
+                print("Error running Python script:", error)
+            } else if let output = output {
+                print("Script output:", output)
+                
+                // Parse JSON in output
+                if let data = output.data(using: .utf8) {
+                    do {
+                        if let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
+                            let predicted = dict["predicted_direction"] ?? "N/A"
+                            let actual = dict["actual_direction"] ?? "N/A"
+                            let plotPath = dict["plot_path"] ?? ""
+                            
+                            print("Predicted: \(predicted), Actual: \(actual)")
+                            print("Plot at: \(plotPath)")
+                            
+                            // If you want to display the plot, load from plotPath (e.g. /tmp/stock_plot.png)
+                            // For macOS:
+                            // if let nsImage = NSImage(contentsOfFile: plotPath) { ... show in UI ... }
+                            
+                            // For iOS:
+                            // if let uiImage = UIImage(contentsOfFile: plotPath) { ... show in UI ... }
+                        }
+                    } catch {
+                        print("JSON parse error:", error)
+                    }
+                }
+            }
+        }
+    }
+
     
     
     

@@ -71,15 +71,25 @@ struct StockView: View {
     func testRunningScript() {
         let stockService = StockService()
         if let scriptPath = stockService.pathForPythonScript(named: "stock_predictor") {
-                    print("Found script at: \(scriptPath)")
-        
-                    // 2) Run the script
-                    stockService.runEmbeddedPythonScript(scriptPath: scriptPath)
-                    
-                    }
-                
+            print("Found script at: \(scriptPath)")
             
+            // Provide empty arguments if your script doesn't need any
+            let arguments: [String] = []
+            
+            // Provide a completion handler if you want output
+            stockService.runEmbeddedPythonScript(
+                scriptPath: scriptPath,
+                arguments: arguments
+            ) { output, error in
+                if let error = error {
+                    print("Error running Python script:", error)
+                } else {
+                    print("Script output:", output ?? "No output")
+                }
+            }
+        }
     }
+
     
     
     
@@ -103,6 +113,10 @@ struct StockView: View {
                 }
             }
         }
+    
+    
+    
+    
 }
     
     
