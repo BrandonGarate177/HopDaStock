@@ -1,5 +1,7 @@
 import Foundation
 import PythonKit
+//import UIKit
+
 
 class StockService {
     // Fetch stock data from Alpha Vantage API
@@ -13,6 +15,9 @@ class StockService {
                   return
             print("you hate me")
         }
+        
+        
+        
         
         
         
@@ -56,6 +61,8 @@ class StockService {
         
         
     }
+    
+    
     
 
     // Parse stock data JSON
@@ -233,7 +240,7 @@ class StockService {
                             
                             // If you want to display the plot, load from plotPath (e.g. /tmp/stock_plot.png)
                             // For macOS:
-                            // if let nsImage = NSImage(contentsOfFile: plotPath) { ... show in UI ... }
+//                             if let nsImage = NSImage(contentsOfFile: plotPath) { ... show in UI ... }
                             
                             // For iOS:
                             // if let uiImage = UIImage(contentsOfFile: plotPath) { ... show in UI ... }

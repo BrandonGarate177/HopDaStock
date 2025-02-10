@@ -14,14 +14,17 @@ import matplotlib.pyplot as plt
 import os
 
 def main():
-    # 1. Retrieve JSON file path from sys.argv or hard-coded for dev
-    if len(sys.argv) < 2:
-        print("Error: No JSON file path provided.")
-        sys.exit(1)
+#    if len(sys.argv) < 2:
+#        print("Error: No JSON file path provided.")
+#        sys.exit(1)
+#    
+#    json_path = sys.argv[1]
+#
+
+    #hardcoding the entry to the file for now.
+    json_path = "/var/folders/0f/8g4pp70178j8tcfvh90vpbhc0000gn/T/stock_data.json"
     
-    json_path = sys.argv[1]
-    
-    # 2. Load the JSON data
+    #Opening the file
     with open(json_path, 'r') as f:
         data = json.load(f)
     
@@ -56,19 +59,19 @@ def main():
     actual_str = "Up" if y_test.values[0] == 1 else "Down"
     
     # 9. Create a plot of the close prices over time
-    plt.figure(figsize=(8, 4))
+    plt.figure(figsize=(8, 6))
     plt.plot(df['date'], df['closePrice'], label='Close Price')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.title('Stock Close Prices Over Time')
-    plt.xlabel('Date')
-    plt.ylabel('Price')
-    plt.legend()
+#    plt.xticks(rotation=45)
+#    plt.tight_layout()
+#    plt.title('Stock Close Prices Over Time')
+#    plt.xlabel('Date')
+#    plt.ylabel('Price')
+   # plt.legend()
     
     # 10. Save plot to a file
     # We'll store it in a temp path or any path you like. Swift can load it from there.
     # e.g., /tmp or sys.argv[2] if you want a custom path
-    plot_path = "/tmp/stock_plot.png"
+    plot_path = "/var/folders/0f/8g4pp70178j8tcfvh90vpbhc0000gn/T/stock_plot.png"
     plt.savefig(plot_path)
     
     # 11. Print JSON result (prediction + actual + path to plot)

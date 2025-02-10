@@ -5,51 +5,95 @@ struct StockView: View {
     @State private var stockData: [(date: String, closePrice: Double, openPrice: Double)] = []
     @State private var errorMessage: String?
     
+    @State var small = true
+    
+    @State private var searchText: String = ""
+
     
     
     var body: some View {
         
+        
+        
         NavigationView {
-            List(stockData, id: \.date) { data in
+            
+            
+            
+            
+            VStack(alignment: .leading) {
+                Text("Stock Data")
+                    .font(.system(size: small ? 24:26))
+                    .bold(true)
+                    .fontWeight(small ? .none :.bold)
+                    .frame(width: 350, height: 30, alignment: .center)
+                    .onTapGesture {
+                        withAnimation(.easeOut(duration: 1)){
+                            small.toggle()
+                        }
+                        
+                    }
+                    
+                Spacer()
                 
-                VStack(alignment: .leading) {
-                    Text("Date: \(data.date)")
-                    Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
-                    Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
-                    
-                    
+                List(stockData, id: \.date) { data in
+                    VStack(alignment: .leading) {
+                        Text("\(data.date)").font(.system(size: 18))
+                        Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
+                        Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
+                    }.bold(true)
                 }
-                
-                
-            }
+            }.background(Color(red: 45/255, green: 106/255, blue: 79/255))
+                .searchable(text: $searchText, placement: .sidebar)
+
+
             
             
             
             
-            Button("Run Python ML") {
+            
+            Button("Get Prediction") {
                 testRunningScript()
+                fetchStockData(data: searchText)
+                fetchAndStoreJSON(data: searchText)
+                
+
                 
                 
-            }
-            .buttonStyle(.bordered)
+            }.controlSize(.large)
+//                .buttonStyle(.borderedProminent)
             //             .fixedSize(.random())
-            .navigationTitle("Stock Prices")
-            .onAppear {
-                fetchStockData()
-                fetchAndStoreJSON()
-            }
             
             
+//                .navigationTitle("Prediciton")
+                .navigationTitle("Prediciton")
+                
+//                .background((
+//                    Color(red: 8/255, green: 28/255, blue: 21/255)
+//                    
+//                ))
+                
+            
+            .ignoresSafeArea()
         }
+        .background(Color(red: 149/255, green: 213/255, blue: 178/255))
+        
+
     }
     
     
     
-    //    I can possibly remove this
-    func fetchStockData() {
+    
+    
+    
+    // Helper functions for the buttons n stuff ya feel me
+    
+    
+    
+//        I can possibly remove this
+    func fetchStockData(data: String) {
         let stockService = StockService()
         
-        stockService.fetchStockData(symbol: "QQQ") { result in
+        stockService.fetchStockData(symbol: data) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -61,7 +105,7 @@ struct StockView: View {
                 }
             }
         }
-        print("did this even try?")
+        print("FetchStock works")
         
         
     }
@@ -69,6 +113,8 @@ struct StockView: View {
     
     
     func testRunningScript() {
+        
+        
         let stockService = StockService()
         if let scriptPath = stockService.pathForPythonScript(named: "stock_predictor") {
             print("Found script at: \(scriptPath)")
@@ -93,9 +139,9 @@ struct StockView: View {
     
     
     
-    func fetchAndStoreJSON() {
+    func fetchAndStoreJSON(data: String) {
         let stockService = StockService()
-        stockService.fetchStockData(symbol: "QQQ") { result in
+        stockService.fetchStockData(symbol: data) { result in
             switch result {
             case .success(let data):
                 // Parse
