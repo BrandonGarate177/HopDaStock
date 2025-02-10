@@ -42,7 +42,7 @@ struct StockView: View {
                         Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
                     }.bold(true)
                 }
-            }.background(Color.teal)
+            }.background(Color(red: 45/255, green: 106/255, blue: 79/255))
                 .searchable(text: $searchText, placement: .sidebar)
 
 
@@ -51,21 +51,33 @@ struct StockView: View {
             
             
             
-            Button("Run Python ML") {
+            Button("Get Prediction") {
                 testRunningScript()
+                fetchStockData(data: searchText)
+                fetchAndStoreJSON(data: searchText)
+                
+
                 
                 
-            }
-            .buttonStyle(.bordered)
+            }.controlSize(.large)
+//                .buttonStyle(.borderedProminent)
             //             .fixedSize(.random())
-            .navigationTitle("Stock Prices")
-            .onAppear {
-                fetchStockData()
-                fetchAndStoreJSON()
-            }
             
             
+//                .navigationTitle("Prediciton")
+                .navigationTitle("Prediciton")
+                
+                .background((
+                    Color(red: 8/255, green: 28/255, blue: 21/255)
+                    
+                ))
+                
+            
+            .ignoresSafeArea()
         }
+        .background(Color(red: 149/255, green: 213/255, blue: 178/255))
+        
+
     }
     
     
@@ -77,11 +89,11 @@ struct StockView: View {
     
     
     
-    //    I can possibly remove this
-    func fetchStockData() {
+//        I can possibly remove this
+    func fetchStockData(data: String) {
         let stockService = StockService()
         
-        stockService.fetchStockData(symbol: "QQQ") { result in
+        stockService.fetchStockData(symbol: data) { result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
@@ -93,7 +105,7 @@ struct StockView: View {
                 }
             }
         }
-        print("did this even try?")
+        print("FetchStock works")
         
         
     }
@@ -101,6 +113,8 @@ struct StockView: View {
     
     
     func testRunningScript() {
+        
+        
         let stockService = StockService()
         if let scriptPath = stockService.pathForPythonScript(named: "stock_predictor") {
             print("Found script at: \(scriptPath)")
