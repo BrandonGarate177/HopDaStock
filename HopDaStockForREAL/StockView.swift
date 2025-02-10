@@ -67,10 +67,10 @@ struct StockView: View {
 //                .navigationTitle("Prediciton")
                 .navigationTitle("Prediciton")
                 
-                .background((
-                    Color(red: 8/255, green: 28/255, blue: 21/255)
-                    
-                ))
+//                .background((
+//                    Color(red: 8/255, green: 28/255, blue: 21/255)
+//                    
+//                ))
                 
             
             .ignoresSafeArea()
