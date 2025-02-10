@@ -5,23 +5,48 @@ struct StockView: View {
     @State private var stockData: [(date: String, closePrice: Double, openPrice: Double)] = []
     @State private var errorMessage: String?
     
+    @State var small = true
+    
+    @State private var searchText: String = ""
+
     
     
     var body: some View {
         
+        
+        
         NavigationView {
-            List(stockData, id: \.date) { data in
+            
+            
+            
+            
+            VStack(alignment: .leading) {
+                Text("Stock Data")
+                    .font(.system(size: small ? 24:26))
+                    .bold(true)
+                    .fontWeight(small ? .none :.bold)
+                    .frame(width: 350, height: 30, alignment: .center)
+                    .onTapGesture {
+                        withAnimation(.easeOut(duration: 1)){
+                            small.toggle()
+                        }
+                        
+                    }
+                    
+                Spacer()
                 
-                VStack(alignment: .leading) {
-                    Text("Date: \(data.date)")
-                    Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
-                    Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
-                    
-                    
+                List(stockData, id: \.date) { data in
+                    VStack(alignment: .leading) {
+                        Text("\(data.date)").font(.system(size: 18))
+                        Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
+                        Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
+                    }.bold(true)
                 }
-                
-                
-            }
+            }.background(Color.teal)
+                .searchable(text: $searchText, placement: .sidebar)
+
+
+            
             
             
             
@@ -42,6 +67,13 @@ struct StockView: View {
             
         }
     }
+    
+    
+    
+    
+    
+    
+    // Helper functions for the buttons n stuff ya feel me
     
     
     
@@ -93,9 +125,9 @@ struct StockView: View {
     
     
     
-    func fetchAndStoreJSON() {
+    func fetchAndStoreJSON(data: String) {
         let stockService = StockService()
-        stockService.fetchStockData(symbol: "QQQ") { result in
+        stockService.fetchStockData(symbol: data) { result in
             switch result {
             case .success(let data):
                 // Parse

@@ -57,6 +57,8 @@ class StockService {
         
     }
     
+    
+    
 
     // Parse stock data JSON
     func parseStockData(_ data: [String: Any]) -> [(date: String, closePrice: Double, openPrice: Double)] {
