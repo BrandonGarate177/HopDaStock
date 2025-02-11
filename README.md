@@ -3,7 +3,7 @@
 This project was a lot of fun to make. I learned so much about swift, python interpretors, embededd systems, and linear regression models. 
 
 ### Installation 
-#### Download via: (link)
+#### Clone repository to local machine, and open via Xcode
 
 ### Features
 - Uses AlphaApi to fetch the user defined stocks data, and uses my Linear Regression Model to predict the direction of the stock based on it's previous Open/Close prices
