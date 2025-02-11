@@ -168,6 +168,8 @@ class StockService {
             // If there's any stderr output, log it
             if let errOutput = errorOutput, !errOutput.isEmpty {
                 print("Python error:\n\(errOutput)")
+                
+                print("Error: out of API calls")
             }
 
             // Call completion with whatever we read from stdout

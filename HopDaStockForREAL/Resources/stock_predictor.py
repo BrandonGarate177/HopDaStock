@@ -32,6 +32,8 @@ def main():
     df = pd.DataFrame(data)  # columns: date, closePrice, openPrice
     
     # 4. Sort by date ascending so time makes sense
+    
+    
     df = df.sort_values(by='date')
     df.reset_index(drop=True, inplace=True)
     
@@ -83,4 +85,9 @@ def main():
     print(json.dumps(result))
 
 if __name__ == "__main__":
-    main()
+
+    try:
+        main()
+    except Exception as ex:
+#        print("Out of API Calls")
+         print("out of calls")
