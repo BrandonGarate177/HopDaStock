@@ -19,7 +19,7 @@ def main():
 #        sys.exit(1)
 #    
 #    json_path = sys.argv[1]
-#
+
 
     #hardcoding the entry to the file for now.
     json_path = "/var/folders/0f/8g4pp70178j8tcfvh90vpbhc0000gn/T/stock_data.json"
@@ -28,7 +28,7 @@ def main():
     with open(json_path, 'r') as f:
         data = json.load(f)
     
-    # 3. Convert to a DataFrame
+    #data frame
     df = pd.DataFrame(data)  # columns: date, closePrice, openPrice
     
     # 4. Sort by date ascending so time makes sense
@@ -74,7 +74,9 @@ def main():
     # We'll store it in a temp path or any path you like. Swift can load it from there.
     # e.g., /tmp or sys.argv[2] if you want a custom path
     plot_path = "/var/folders/0f/8g4pp70178j8tcfvh90vpbhc0000gn/T/stock_plot.png"
+    
     plt.savefig(plot_path)
+    plt.close()
     
     # 11. Print JSON result (prediction + actual + path to plot)
     result = {
