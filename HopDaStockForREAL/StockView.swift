@@ -8,6 +8,13 @@ struct StockView: View {
     @State var small = true
     
     @State private var searchText: String = ""
+    @State var outOfCalls = false
+    
+    @State var calls = true
+    @State var temp = "Prediction"
+    
+    
+    
 
     
     
@@ -35,16 +42,33 @@ struct StockView: View {
                     
                 Spacer()
                 
+//                if !outOfCalls{
+////                    Text("Error: out of API calls")
+//                    print(outOfCalls)
+//                    
+//                }
+//                
+                
+                
                 List(stockData, id: \.date) { data in
                     VStack(alignment: .leading) {
-                        Text("\(data.date)").font(.system(size: 18))
-                        Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
-                        Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
+                        
+                        
+                    
+                            Text("\(data.date)").font(.system(size: 18))
+                            Text("Closing Price: $\(data.closePrice, specifier: "%.2f")")
+                            Text("Opening Price: $\(data.openPrice, specifier: "%.2f")")
+                            Text("Man bruh")
+                        
+                        
+                        
+
+                        
                     }.bold(true)
                 }
             }.background(Color(red: 45/255, green: 106/255, blue: 79/255))
                 .searchable(text: $searchText, placement: .sidebar)
-
+            
 
             
             
@@ -55,7 +79,16 @@ struct StockView: View {
                 testRunningScript()
                 fetchStockData(data: searchText)
                 fetchAndStoreJSON(data: searchText)
+                calls = checkStateOfCalls()
                 
+//                if(checkStateOfCalls() == false){
+//                    Text("Out of API calls")
+//                }
+               
+                
+                if !calls{
+                    temp = "ERROR: OUT OF API CALLS"
+                }
 
                 
                 
@@ -65,7 +98,7 @@ struct StockView: View {
             
             
 //                .navigationTitle("Prediciton")
-                .navigationTitle("Prediciton")
+                .navigationTitle(temp)
                 
 //                .background((
 //                    Color(red: 8/255, green: 28/255, blue: 21/255)
@@ -77,6 +110,7 @@ struct StockView: View {
         }
         .background(Color(red: 149/255, green: 213/255, blue: 178/255))
         
+        
 
     }
     
@@ -85,6 +119,22 @@ struct StockView: View {
     
     
     
+    
+    
+    func checkStateOfCalls()->Bool{
+        //if out of calls
+        if !outOfCalls{
+            //                    Text("Error: out of API calls")
+            print("printing outOfCalls var: \(outOfCalls)")
+            
+        }
+        else{ // if still has calls remaining
+            print("Printing outOfCalls var: \(outOfCalls)")
+        }
+        return outOfCalls
+        
+        
+    }
     // Helper functions for the buttons n stuff ya feel me
     
     
@@ -131,6 +181,8 @@ struct StockView: View {
                     print("Error running Python script:", error)
                 } else {
                     print("Script output:", output ?? "No output")
+                    
+                  
                 }
             }
         }
