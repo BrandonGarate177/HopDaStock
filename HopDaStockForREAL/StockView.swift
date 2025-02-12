@@ -8,7 +8,7 @@ struct StockView: View {
     @State var small = true
     
     @State private var searchText: String = ""
-    @State var outOfCalls = false
+    @State var hasCalls = true
     
     @State var calls = true
     @State var temp = "Prediction"
@@ -79,7 +79,6 @@ struct StockView: View {
                 testRunningScript()
                 fetchStockData(data: searchText)
                 fetchAndStoreJSON(data: searchText)
-                calls = checkStateOfCalls()
                 
 //                if(checkStateOfCalls() == false){
 //                    Text("Out of API calls")
@@ -93,19 +92,10 @@ struct StockView: View {
                 
                 
             }.controlSize(.large)
-//                .buttonStyle(.borderedProminent)
-            //             .fixedSize(.random())
-            
-            
-//                .navigationTitle("Prediciton")
+
                 .navigationTitle(temp)
                 
-//                .background((
-//                    Color(red: 8/255, green: 28/255, blue: 21/255)
-//                    
-//                ))
-                
-            
+
             .ignoresSafeArea()
         }
         .background(Color(red: 149/255, green: 213/255, blue: 178/255))
@@ -123,15 +113,15 @@ struct StockView: View {
     
     func checkStateOfCalls()->Bool{
         //if out of calls
-        if !outOfCalls{
+        if !hasCalls{
             //                    Text("Error: out of API calls")
-            print("printing outOfCalls var: \(outOfCalls)")
+            print("printing hasCalls var: \(hasCalls)")
             
         }
         else{ // if still has calls remaining
-            print("Printing outOfCalls var: \(outOfCalls)")
+            print("Printing hasCalls var: \(hasCalls)")
         }
-        return outOfCalls
+        return hasCalls
         
         
     }
@@ -182,6 +172,12 @@ struct StockView: View {
                 } else {
                     print("Script output:", output ?? "No output")
                     
+                    if let trimmedOutput = output?.trimmingCharacters(in: .whitespacesAndNewlines),
+                                      trimmedOutput == "out of calls" {
+                                       DispatchQueue.main.async {
+                                           self.hasCalls = false
+                                       }
+                    }
                   
                 }
             }
