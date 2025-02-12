@@ -23,8 +23,6 @@ class StockService {
         
         // this fetches the api key with the link below. checks to see if we have a valid key and url
         
-//        print("API Key retrieved successfully: \(apiKey)")
-
 //         Construct URL for Alpha Vantage API
     
         let urlString = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(symbol)&apikey=\(apiKey)"
@@ -183,35 +181,6 @@ class StockService {
         }
     }
 
-
-
-    
-    
-    
-
-    
-    
-//    ################### DEBUG ########################
-//    func testRunningScript() {
-//        // 1) Get the path to 'stock_predict.py' from the app bundle
-//        if let scriptPath = pathForPythonScript(named: "stock_predictor") {
-//            print("Found script at: \(scriptPath)")
-//            
-//            // 2) Run the script
-//            runPythonScript(scriptPath: scriptPath) { output, error in
-//                if let error = error {
-//                    print("Error running Python script: \(error)")
-//                } else {
-//                    print("Script output: \(output ?? "No output")")
-//                    // IT PRINTS NO OUTPUT BECAUSE IT DOESN'T EVEN RUN BRUHH H
-//                }
-//            }
-//        } else {
-//            print("Could not find stock_predict.py in the app bundle.")
-//        }
-//    }
-    
-    
     // Example function
     func runMLPrediction(jsonURL: URL) {
         guard let scriptPath = Bundle.main.path(forResource: "stock_predictor", ofType: "py") else {
@@ -240,12 +209,12 @@ class StockService {
                             print("Predicted: \(predicted), Actual: \(actual)")
                             print("Plot at: \(plotPath)")
                             
-                            // If you want to display the plot, load from plotPath (e.g. /tmp/stock_plot.png)
                             // For macOS:
-//                             if let nsImage = NSImage(contentsOfFile: plotPath) { ... show in UI ... }
                             
-                            // For iOS:
-                            // if let uiImage = UIImage(contentsOfFile: plotPath) { ... show in UI ... }
+//                             if let nsImage = NSImage(contentsOfFile: plotPath) {
+//
+//                             }
+                            
                         }
                     } catch {
                         print("JSON parse error:", error)

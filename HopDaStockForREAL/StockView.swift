@@ -92,19 +92,10 @@ struct StockView: View {
                 
                 
             }.controlSize(.large)
-//                .buttonStyle(.borderedProminent)
-            //             .fixedSize(.random())
-            
-            
-//                .navigationTitle("Prediciton")
+
                 .navigationTitle(temp)
                 
-//                .background((
-//                    Color(red: 8/255, green: 28/255, blue: 21/255)
-//                    
-//                ))
-                
-            
+
             .ignoresSafeArea()
         }
         .background(Color(red: 149/255, green: 213/255, blue: 178/255))
