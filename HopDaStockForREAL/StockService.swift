@@ -26,36 +26,39 @@ class StockService {
 //         Construct URL for Alpha Vantage API
     
         let urlString = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=\(symbol)&apikey=\(apiKey)"
-
-        guard let url = URL(string: urlString) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
-            return
-        }
-        // TESTS
-
-        // Make network request
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
+            guard let url = URL(string: urlString) else {
+                completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
                 return
             }
-            guard let data = data else {
-                completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-                return
-            }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    completion(.success(json))
-                } else {
-                    completion(.failure(NSError(domain: "Invalid JSON format", code: 0, userInfo: nil)))
+            
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    return
                 }
-            } catch {
-                completion(.failure(error))
+                guard let data = data else {
+                    completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+                    return
+                }
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        // Check if expected key exists
+                        if json["Time Series (Daily)"] == nil {
+                            // Create a custom error for an invalid stock symbol.
+                            let error = NSError(domain: "InvalidStockSymbol", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid stock symbol. Please enter a valid one."])
+                            completion(.failure(error))
+                        } else {
+                            completion(.success(json))
+                        }
+                    } else {
+                        completion(.failure(NSError(domain: "Invalid JSON format", code: 0, userInfo: nil)))
+                    }
+                } catch {
+                    completion(.failure(error))
+                }
             }
-        }
-        
-    
-        task.resume()
+            
+            task.resume()
         
         
     }
@@ -206,27 +209,15 @@ class StockService {
                         if let dict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
                             let predicted = dict["predicted_direction"] ?? "N/A"
                             let actual = dict["actual_direction"] ?? "N/A"
-                            let plotPath = dict["plot_path"] ?? ""
+                            let returnedPlotPath = dict["plot_path"] ?? ""
                             
                             print("Predicted: \(predicted), Actual: \(actual)")
-                            print("Plot at: \(plotPath)")
+                            print("Plot at: \(returnedPlotPath)")
                             
-//                            do {
-//                                let fileUrl = URL(string: plotPath)
-//
-//                                let data = try Data(contentsOf: fileUrl!)
-//                                print("data is saved as the")
-//                                   // Process the data here
-//                            } catch {
-//                                print("Error reading file: \(error)")
+                            // Update the state variable on the main thread
+//                            DispatchQueue.main.async {
+//                                self.plotPath = returnedPlotPath
 //                            }
-//                            
-                            // For macOS:
-                            
-//                             if let nsImage = NSImage(contentsOfFile: plotPath) {
-//
-//                             }
-                            
                         }
                     } catch {
                         print("JSON parse error:", error)
