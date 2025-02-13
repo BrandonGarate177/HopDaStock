@@ -14,4 +14,6 @@ This project was a lot of fun to make. I learned so much about swift, python int
 
 ### Screenshots 
 
-<img width="904" alt="Screenshot 2025-02-10 at 6 13 57 PM" src="https://github.com/user-attachments/assets/6ab215e0-a84c-4e5a-82ce-7d9cbef5d277" />
+<img width="929" alt="Screenshot 2025-02-13 at 11 40 37 AM" src="https://github.com/user-attachments/assets/456829b9-d494-4cb8-9a04-102dc8cc5669" />
+<img width="930" alt="Screenshot 2025-02-13 at 11 40 48 AM" src="https://github.com/user-attachments/assets/561dd50c-4eed-4957-8a69-cce79a483bf6" />
+<img width="933" alt="Screenshot 2025-02-13 at 11 40 23 AM" src="https://github.com/user-attachments/assets/4bf6af30-8723-433a-a5d1-f3df9402309e" />
