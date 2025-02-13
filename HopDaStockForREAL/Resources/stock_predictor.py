@@ -39,7 +39,7 @@ def main():
     df['direction'] = (df['closePrice'] > df['prev_close']).astype(int)
     
     # Prepare features
-    df['prev_close'] = df['prev_close'].fillna(method='bfill')
+    #df['prev_close'] = df['prev_close'].fillna(method='ffill')
     X = df[['openPrice', 'prev_close']]
     y = df['direction']
     

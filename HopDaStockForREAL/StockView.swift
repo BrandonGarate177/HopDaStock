@@ -79,6 +79,7 @@ struct StockView: View {
                 testRunningScript()
                 fetchStockData(data: searchText)
                 fetchAndStoreJSON(data: searchText)
+                runMLmodel()
                 
 //                if(checkStateOfCalls() == false){
 //                    Text("Out of API calls")
@@ -148,6 +149,13 @@ struct StockView: View {
         print("FetchStock works")
         
         
+    }
+    
+    func runMLmodel(){
+        let stockService = StockService()
+    
+        let fileUrl = URL(fileURLWithPath: "/var/folders/0f/8g4pp70178j8tcfvh90vpbhc0000gn/T/stock_data.json")
+        stockService.runMLPrediction(jsonURL: fileUrl)
     }
     
     

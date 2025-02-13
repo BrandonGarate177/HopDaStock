@@ -163,6 +163,8 @@ class StockService {
             let errData = errorPipe.fileHandleForReading.readDataToEndOfFile()
             let errorOutput = String(data: errData, encoding: .utf8)
 
+            
+            
             // If there's any stderr output, log it
             if let errOutput = errorOutput, !errOutput.isEmpty {
                 print("Python error:\n\(errOutput)")
@@ -209,6 +211,16 @@ class StockService {
                             print("Predicted: \(predicted), Actual: \(actual)")
                             print("Plot at: \(plotPath)")
                             
+//                            do {
+//                                let fileUrl = URL(string: plotPath)
+//
+//                                let data = try Data(contentsOf: fileUrl!)
+//                                print("data is saved as the")
+//                                   // Process the data here
+//                            } catch {
+//                                print("Error reading file: \(error)")
+//                            }
+//                            
                             // For macOS:
                             
 //                             if let nsImage = NSImage(contentsOfFile: plotPath) {
