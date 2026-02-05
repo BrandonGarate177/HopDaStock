@@ -1,9 +1,24 @@
 # API Keys - DO NOT COMMIT
 HopDaStockForREAL/Secrets.plist
 
-# Python framework (if ever re-added)
-HopDaStockForREAL/Frameworks/
-
 # Xcode
 *.xcuserstate
 xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+build/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Python (if ever re-added)
+HopDaStockForREAL/Frameworks/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
