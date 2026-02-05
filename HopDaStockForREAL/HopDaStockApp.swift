@@ -11,7 +11,7 @@ import SwiftUI
 struct HopDaStockApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StockView()
         }
     }
 }
